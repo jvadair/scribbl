@@ -12,6 +12,8 @@
 ## Directions
 ### These directions are rather lengthy, but only because I explained each step in a lot of detail. If you think you get it, you probably do.
 
+### Hardware
+
 To build the Scribbl watch, first consult the bill of materials below. You will need to order 2 parts (about $30 before tax, as of Feb 2024) and have access to a 3D printer.
 
 > 💡 3D printers are actually more commonplace than you might think - your local school or library probably has one. If not, you can always pay to have the parts printed for you through an online service. If you own a 3D printer, you will likely know that filament is dirt cheap, hence why the project is so heavily reliant on it.
@@ -26,6 +28,13 @@ Getting tired of reading yet? Because I'm getting a bit tired of writing this!
 
 😡 Finally, after all that, you still have one last challenge to overcome - the pins. I designed them to account for error by the 3D printer, so they are larger than they should be by default. Trim off (carefully) with scissors any excess that printed funny (fatter than the rest) and repeat this until the pin is just wider than the space between the pegs (technically called the "lugs") that are designed to accept it on the watch. You will likely mess up several times, so I recommend you print 4 pins or more to start. They cost $0.00 to print (according to Cura), so don't feel bad. Next, put 1 pin into each of the half-watch-bands and force the straps into the lugs.
 
+### Software (the good stuff!)
+First, install [Thonny](https://thonny.org). Next, plug your watch into your computer. In the bottom right of Thonny, change the Python interpreter (it may say something like "local Python3") to ESP32. Then, click that again and select "Configure interpreter". On that screen, select (from the bottom right) "Install or update micropython" (esptool). You may need to follow Thonny's instructions for installing esptool (basically, Tools -> Manage Plugins -> find & install esptool from the dialog). Click the 3 bars in the bottom right next to "Install", and then choose "Select local Micropython image".
+
+Download and select within Thonny the .bin file from Waveshare I have uploaded here under "firmware", and then click "Install". This may take a while. Next, just upload the 2 files under the "src" folder to the watch by right clicking them in Thonny and choosing "Upload to ...". You can either press the "reset" button on your board, or type `import main` into the console in Thonny (recommended), whatever works for you.
+
+> If you're a purist and can't bear the thought of a closed binary built off of open-source software and distributed by a Chinese company, you should set the settings for the board using the Wiki link from Waveshare and download+use [this library/firmware](https://github.com/russhughes/gc9a01_mpy) instead. It's basically the same thing, I think, and should work. I just trusted Waveshare though - it's way easier and should be safe given the underlying code is open source.
+
 :tada: You now have a $30 watch with all of the modern tech you'd expect!
 
 
@@ -33,7 +42,7 @@ Getting tired of reading yet? Because I'm getting a bit tired of writing this!
 #### Must be bought
 - [Touch-display + chip combo](https://cad.onshape.com/documents/df6f08e5f62cd6d70542b14d/w/1ab66002cb82fdc373f192e6/e/c2b169e66e06287716c78e38) - $22
   - This can be bought from Waveshare directly, but I recommend getting it from [Amazon](https://www.amazon.com/gp/product/B0CM6JCJ2H/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) as it is roughly the same price after shipping/tax.
-  - [Battery](https://www.amazon.com/dp/B0BJPG4B72?psc=1&smid=A3FKMD6P089KQA&ref_=chk_typ_imgToDp) - $10
+- [Battery](https://www.amazon.com/dp/B0BJPG4B72?psc=1&smid=A3FKMD6P089KQA&ref_=chk_typ_imgToDp) - $10
     - You can use a different battery, but it needs to have an MX1.25 connector and you will have to redesign the case. Honestly, it's not worth it as larger capacity batteries are also much larger in size.
 #### 3D printed
 -  [Watch Case (3 parts)](https://cad.onshape.com/documents/df6f08e5f62cd6d70542b14d/w/1ab66002cb82fdc373f192e6/e/c2b169e66e06287716c78e38)
