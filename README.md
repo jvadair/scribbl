@@ -18,7 +18,7 @@ To build the Scribbl watch, first consult the bill of materials below. You will 
 
 > 💡 3D printers are actually more commonplace than you might think - your local school or library probably has one. If not, you can always pay to have the parts printed for you through an online service. If you own a 3D printer, you will likely know that filament is dirt cheap, hence why the project is so heavily reliant on it.
 
-⬇️ First, download the watch case I have designed. You can find the model files under the STL folder and labeled as "container.stl" and "cover.stl". You will also need to download "pin.stl" (__which will be printed multiple times__ - I recommend 4, but skip down a bit for more info). The model is designed to "just fit" - the tolerances have been carefully set so that all parts fit snugly together and there are no screws required. Additionally, download the watch strap designed by ibudmen and linked below. You will need a Thingiverse account to use the customizer, or you can download the .scad file (also copied under the STL folder) and use a suitable program to modify it as described below.
+⬇️ First, download the watch case I have designed. You can find the model files under the 3D Models folder and labeled as "container.stl" and "cover.stl". You will also need to download "pin.stl" (__which will be printed multiple times__ - I recommend 4, but skip down a bit for more info). The model is designed to "just fit" - the tolerances have been carefully set so that all parts fit snugly together and there are no screws required. Additionally, download the watch strap designed by ibudmen and linked below. You will need a Thingiverse account to use the customizer, or you can download the .scad file (also copied under the 3D Models folder) and use a suitable program to modify it as described below.
 
 🖨️ Next, print the model. If you are an experienced printer, simply know that just about any settings will do - have fun. Otherwise, I will now explain in depth how to 3D print an object. First, download a program like Cura (what I use, it's free and open source). Next, simply drag and drop your .stl file into the program. You may see some settings on the right - you shouldn't need to mess with them to print this well. Click the blue "Slice" button in the bottom right corner. "Slicing" the print means splitting it up into thin layers which will be printed layer-by-layer by the printer. When you're done, save the file (bottom right corner) to an external SD/MicroSD card that you will then put in the printer. If you are borrowing a printer, please read the instructions for that printer or ask someone to assist you in getting the print started. Honestly, most printers should be fairly intuitive to use after you put the MicroSD card in.
 
@@ -30,6 +30,7 @@ Getting tired of reading yet? Because I'm getting a bit tired of writing this!
 
 ### Software (the good stuff!)
 First, install [Thonny](https://thonny.org). Next, plug your watch into your computer. In the bottom right of Thonny, change the Python interpreter (it may say something like "local Python3") to ESP32. Then, click that again and select "Configure interpreter". On that screen, select (from the bottom right) "Install or update micropython" (esptool). You may need to follow Thonny's instructions for installing esptool (basically, Tools -> Manage Plugins -> find & install esptool from the dialog). Click the 3 bars in the bottom right next to "Install", and then choose "Select local Micropython image".
+> If Thonny is having issues detecting your watch, make sure to 
 
 Download and select within Thonny the .bin file from Waveshare I have uploaded here under "firmware", and then click "Install". This may take a while. Next, just upload the 2 files under the "src" folder to the watch by right clicking them in Thonny and choosing "Upload to ...". You can either press the "reset" button on your board, or type `import main` into the console in Thonny (recommended), whatever works for you.
 
@@ -49,3 +50,7 @@ Download and select within Thonny the .bin file from Waveshare I have uploaded h
     - You will also need to print several of the pins I designed as well. Due to slight inaccuracies in 3D printing, I have designed them to be larger than needed. Simply cut a little bit off until the pins are just longer than the width between the slots on the watch they fit into.
 -  [Watch strap (not designed by me)](https://www.thingiverse.com/thing:87132)
     - Use customizer (click "customize" in the bottom left corner of the model page) with 22mm width, 1.2 pin radius, pick your length
+
+## More details for nerds
+Here is the documentation for the Waveshare board:
+https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.28
