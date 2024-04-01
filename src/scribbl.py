@@ -1,6 +1,6 @@
 from machine import Pin, SPI
 import gc9a01  # Display driver
-from i2cdrivers import CST816, QMI8658C  # Touch and 6-axis sensor drivers
+from lib.i2cdrivers import CST816, QMI8658C  # Touch and 6-axis sensor drivers
 import gc
 from time import sleep
 
